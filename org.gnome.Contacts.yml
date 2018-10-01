@@ -142,8 +142,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.30/evolution-data-server-3.30.0.tar.xz
-        sha256: d466c1fcc4cf17e9923b7166fbd1bd66c53f518a90323fbff6ff08f74cb50dee
+        url: https://download.gnome.org/sources/evolution-data-server/3.30/evolution-data-server-3.30.1.tar.xz
+        sha256: a4221ece8bed77eef4cbdd91a4ba9a786068c93bc52e0c9d7aca525e620dd60e
 
   - name: folks
     cleanup:
@@ -162,8 +162,8 @@ modules:
       - --disable-udev
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-desktop/3.30/gnome-desktop-3.30.0.tar.xz
-        sha256: 45494f6af18d9125a0fd1024f7442fcc5d3219fca79527d4aa1906e37af795fd
+        url: https://download.gnome.org/sources/gnome-desktop/3.30/gnome-desktop-3.30.1.tar.xz
+        sha256: 1383703bedd71204e4a161fb163905410c8f651890f18b3fa8405506ba97789f
 
   - name: cheese
     config-opts:
@@ -180,5 +180,5 @@ modules:
       - --buildtype=debugoptimized
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-contacts/3.30/gnome-contacts-3.30.tar.xz
-        sha256: acad6b4d7cf3cbb01a285d6bfbe1e2d9eaa7d4992fa94884bf620668084eaa33
+        url: https://download.gnome.org/sources/gnome-contacts/3.30/gnome-contacts-3.30.1.tar.xz
+        sha256: 095500f62992890bd47329635981e36219db1ebd52f27d7bb3f7503a96bc3fee
