@@ -39,9 +39,6 @@ finish-args:
 build-options:
   cflags: -O2 -g
   cxxflags: -O2 -g
-  env:
-    PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR: /app/share/gir-1.0
-    PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR: /app/lib/girepository-1.0
 
 cleanup:
   - /include
@@ -65,7 +62,10 @@ modules:
         url: https://telepathy.freedesktop.org/releases/telepathy-glib/telepathy-glib-0.24.1.tar.gz
         sha256: 9e0df1d8f857e0270cf0b32e2d1ca5a24aa7282873361785d573f72ad7f7d5eb
 
-  - name: libgee 
+  - name: libgee
+    make-install-args:
+      - girdir=/app/share/gir-1.0
+      - typelibdir=/app/lib/girepository-1.0
     sources:
       - type: archive
         url: https://download.gnome.org/sources/libgee/0.20/libgee-0.20.1.tar.xz
@@ -96,27 +96,12 @@ modules:
     buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_INSTALL_LIBDIR=lib
       - -DBUILD_SHARED_LIBS:BOOL=ON
     sources:
       - type: archive
         url: https://github.com/libical/libical/releases/download/v2.0.0/libical-2.0.0.tar.gz
         sha256: 654c11f759c19237be39f6ad401d917e5a05f36f1736385ed958e60cf21456da
-
-  - name: liboauth
-    sources:
-      - type: archive
-        url: http://netix.dl.sourceforge.net/project/liboauth/liboauth-1.0.3.tar.gz
-        sha256: 0df60157b052f0e774ade8a8bac59d6e8d4b464058cc55f9208d72e41156811f
-
-  - name: libgdata
-    config-opts:
-      - --disable-always-build-tests
-      - --disable-Werror
-      - --disable-static
-    sources:
-      - type: archive
-        url: https://download.gnome.org/sources/libgdata/0.17/libgdata-0.17.9.tar.xz
-        sha256: 85c4f7674c0098ffaf060ae01b6b832cb277b3673d54ace3bdedaad6b127453a
 
   - name: evolution-data-server
     cleanup:
@@ -129,12 +114,13 @@ modules:
       - -DENABLE_GTK=ON
       - -DENABLE_GOA=ON
       - -DENABLE_UOA=OFF
-      - -DENABLE_GOOGLE_AUTH=ON
-      - -DENABLE_GOOGLE=ON
-      - -DENABLE_WITH_PHONENUMBER=ON
+      - -DENABLE_GOOGLE_AUTH=OFF
+      - -DENABLE_GOOGLE=OFF
+      - -DENABLE_WITH_PHONENUMBER=OFF
       - -DENABLE_VALA_BINDINGS=ON
       - -DENABLE_WEATHER=OFF
       - -DWITH_OPENLDAP=OFF
+      - -DWITH_LIBDB=OFF
       - -DENABLE_INTROSPECTION=ON
       - -DENABLE_INSTALLED_TESTS=OFF
       - -DENABLE_GTK_DOC=OFF
