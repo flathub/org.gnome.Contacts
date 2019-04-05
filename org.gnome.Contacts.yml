@@ -83,8 +83,8 @@ modules:
       - --disable-backend
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-online-accounts/3.30/gnome-online-accounts-3.30.0.tar.xz
-        sha256: 27d9d88942aa02a1f8d003dfe515483d8483f216ba1e297a8ef67a42cf4bcfc3
+        url: https://download.gnome.org/sources/gnome-online-accounts/3.32/gnome-online-accounts-3.32.0.tar.xz
+        sha256: 1c19e65771c8d16fa0016ab70d9a1ee2b75a84aeeedd24527a4e41b132e8d4aa
 
   - name: libical
     cleanup:
@@ -124,8 +124,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.30/evolution-data-server-3.30.1.tar.xz
-        sha256: a4221ece8bed77eef4cbdd91a4ba9a786068c93bc52e0c9d7aca525e620dd60e
+        url: https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.0.tar.xz
+        sha256: 8e10b84974e483322e07a97c57dff56ffb208aa0c33e39a13208d6c52470ddde
 
   - name: folks
     cleanup:
@@ -139,13 +139,14 @@ modules:
         sha256: a7b03ed30373e29f62fc3e6f498adce2d4909b852608fc2058a02fda9f80189a
 
   - name: gnome-desktop
+    buildsystem: meson
     config-opts:
-      - --disable-debug-tools
-      - --disable-udev
+      - -Ddebug-tools=false
+      - -Dudev=disabled
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-desktop/3.30/gnome-desktop-3.30.1.tar.xz
-        sha256: 1383703bedd71204e4a161fb163905410c8f651890f18b3fa8405506ba97789f
+        url: https://download.gnome.org/sources/gnome-desktop/3.32/gnome-desktop-3.32.0.tar.xz
+        sha256: a6393dc5fc29fc0652ac84c73b3da205d0b0168128c4cf6d27797a08f3d07b54
 
   - name: cheese
     config-opts:
@@ -153,8 +154,8 @@ modules:
       - --disable-lcov
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/cheese/3.30/cheese-3.30.0.tar.xz
-        sha256: 5952cf6eeef12f9a174222a69199cf60c9b58b4844d83fb4ab9a0aa7e45be27f
+        url: https://download.gnome.org/sources/cheese/3.32/cheese-3.32.0.tar.xz
+        sha256: 544b0d42a01817c360b785c789aa783415953826598b7980f92ae3b48d76132a
 
   - name: gnome-contacts
     buildsystem: meson
@@ -162,5 +163,5 @@ modules:
       - --buildtype=debugoptimized
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-contacts/3.30/gnome-contacts-3.30.1.tar.xz
-        sha256: 095500f62992890bd47329635981e36219db1ebd52f27d7bb3f7503a96bc3fee
+        url: https://download.gnome.org/sources/gnome-contacts/3.32/gnome-contacts-3.32.tar.xz
+        sha256: fc49f9821fe7a2491287bc25979bb428d39c6510d23c59bf031a4e555a39798b
