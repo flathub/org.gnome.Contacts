@@ -124,19 +124,18 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.0.tar.xz
-        sha256: 8e10b84974e483322e07a97c57dff56ffb208aa0c33e39a13208d6c52470ddde
+        url: https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.1.tar.xz
+        sha256: cdafd519307ec9a1ee0e613674330fd92cb8afab68b5d18e55e7ff4994686849
 
   - name: folks
+    buildsystem: meson
     cleanup:
       - /bin
       - /share/GConf
-    config-opts:
-      - --disable-fatal-warnings
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/folks/0.11/folks-0.11.4.tar.xz
-        sha256: a7b03ed30373e29f62fc3e6f498adce2d4909b852608fc2058a02fda9f80189a
+        url: https://download.gnome.org/sources/folks/0.12/folks-0.12.1.tar.xz
+        sha256: 3ca9f2d50fdf5a7a3d3f59c49bd54ceaf8d8181938762370e07535f86d36d475
 
   - name: gnome-desktop
     buildsystem: meson
@@ -145,8 +144,8 @@ modules:
       - -Dudev=disabled
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-desktop/3.32/gnome-desktop-3.32.0.tar.xz
-        sha256: a6393dc5fc29fc0652ac84c73b3da205d0b0168128c4cf6d27797a08f3d07b54
+        url: https://download.gnome.org/sources/gnome-desktop/3.32/gnome-desktop-3.32.1.2.tar.xz
+        sha256: 77d8cdc30ac69393ecb3ca702e57e79127b673bda124905372496d5367456499
 
   - name: cheese
     config-opts:
@@ -154,8 +153,8 @@ modules:
       - --disable-lcov
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/cheese/3.32/cheese-3.32.0.tar.xz
-        sha256: 544b0d42a01817c360b785c789aa783415953826598b7980f92ae3b48d76132a
+        url: https://download.gnome.org/sources/cheese/3.32/cheese-3.32.1.tar.xz
+        sha256: 7b9ad1da8bb475a9e71ae69a5832786a75e860f0af927637540574fd49d595f6
 
   - name: gnome-contacts
     buildsystem: meson
@@ -163,5 +162,5 @@ modules:
       - --buildtype=debugoptimized
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-contacts/3.32/gnome-contacts-3.32.tar.xz
-        sha256: fc49f9821fe7a2491287bc25979bb428d39c6510d23c59bf031a4e555a39798b
+        url: https://download.gnome.org/sources/gnome-contacts/3.32/gnome-contacts-3.32.1.tar.xz
+        sha256: de0bfd81e4ab4400e7b4b04e81d2de4f2ebae3d70226d3db750c15e9117ce19d
