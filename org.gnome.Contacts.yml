@@ -1,7 +1,7 @@
 app-id: org.gnome.Contacts
 
 runtime: org.gnome.Platform
-runtime-version: '3.32'
+runtime-version: '3.34'
 sdk: org.gnome.Sdk
 
 command: gnome-contacts
@@ -21,20 +21,15 @@ finish-args:
   # GNOME Online Accounts (GOA)
   - --talk-name=org.gnome.OnlineAccounts
   # Evolution Data server (E-D-S)
-  - --talk-name=org.gnome.evolution.dataserver.AddressBook9
+  - --talk-name=org.gnome.evolution.dataserver.AddressBook10
   - --talk-name=org.gnome.evolution.dataserver.Sources5
   - --talk-name=org.gnome.evolution.dataserver.Subprocess.Backend.*
-  # Telepathy
-  - --talk-name=org.freedesktop.Telepathy.AccountManager
-  # Allow avatars from $HOME
+ # Allow avatars from $HOME
   - --filesystem=home:ro
   # Access for the default avatars
   - --filesystem=xdg-data/pixmaps/faces:ro:create
   # Needed for dconf to work
-  - --filesystem=xdg-run/dconf
-  - --filesystem=~/.config/dconf:ro
-  - --talk-name=ca.desrt.dconf
-  - --env=DCONF_USER_CONFIG_DIR=.config/dconf
+  - --metadata=X-DConf=migrate-path=/org/gnome/Contacts/
 
 cleanup:
   - /include
@@ -49,24 +44,6 @@ cleanup:
   - '*.a'
 
 modules:
-  - name: telepathy-glib
-    config-opts:
-      - --disable-static
-      - --enable-vala-bindings=yes
-    sources:
-      - type: archive
-        url: https://telepathy.freedesktop.org/releases/telepathy-glib/telepathy-glib-0.24.1.tar.gz
-        sha256: 9e0df1d8f857e0270cf0b32e2d1ca5a24aa7282873361785d573f72ad7f7d5eb
-
-  - name: libgee
-    make-install-args:
-      - girdir=/app/share/gir-1.0
-      - typelibdir=/app/lib/girepository-1.0
-    sources:
-      - type: archive
-        url: https://download.gnome.org/sources/libgee/0.20/libgee-0.20.1.tar.xz
-        sha256: bb2802d29a518e8c6d2992884691f06ccfcc25792a5686178575c7111fea4630
-
   - name: librest
     sources:
       - type: archive
@@ -77,14 +54,10 @@ modules:
     cleanup:
       - /bin
       - /share/GCon/
-    config-opts:
-      - --disable-telepathy
-      - --disable-documentation
-      - --disable-backend
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-online-accounts/3.32/gnome-online-accounts-3.32.0.tar.xz
-        sha256: 1c19e65771c8d16fa0016ab70d9a1ee2b75a84aeeedd24527a4e41b132e8d4aa
+        url: https://download.gnome.org/sources/gnome-online-accounts/3.34/gnome-online-accounts-3.34.0.tar.xz
+        sha256: c44fbce4eeb54703a2ab4954d54f11eb29666f9cf61b5275b9fe0fc033377f57
 
   - name: libical
     cleanup:
@@ -94,10 +67,14 @@ modules:
       - -DCMAKE_BUILD_TYPE=Release
       - -DCMAKE_INSTALL_LIBDIR=lib
       - -DBUILD_SHARED_LIBS:BOOL=ON
+      - -DICAL_GLIB=true
+      - -DGOBJECT_INTROSPECTION=true
+      - -DICAL_GLIB_VAPI=true
+      - -DICAL_BUILD_DOCS=false
     sources:
       - type: archive
-        url: https://github.com/libical/libical/releases/download/v2.0.0/libical-2.0.0.tar.gz
-        sha256: 654c11f759c19237be39f6ad401d917e5a05f36f1736385ed958e60cf21456da
+        url: https://github.com/libical/libical/releases/download/v3.0.5/libical-3.0.5.tar.gz
+        sha256: 7ad550c8c49c9b9983658e3ab3e68b1eee2439ec17b169a6b1e6ecb5274e78e6
 
   - name: evolution-data-server
     cleanup:
@@ -124,37 +101,47 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.1.tar.xz
-        sha256: cdafd519307ec9a1ee0e613674330fd92cb8afab68b5d18e55e7ff4994686849
+        url: https://download.gnome.org/sources/evolution-data-server/3.34/evolution-data-server-3.34.0.tar.xz
+        sha256: fb9db0a824ae01ecc63c82cf8e503fecdcba7118b919f04bda7d8d91f3e486cf
+    modules:
+      - shared-modules/intltool/intltool-0.51.json
 
   - name: folks
     buildsystem: meson
+    config-opts:
+      - -Dtelepathy_backend=false
+      - -Dinspect_tool=false
+      - -Dimport_tool=false
     cleanup:
       - /bin
       - /share/GConf
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/folks/0.12/folks-0.12.1.tar.xz
-        sha256: 3ca9f2d50fdf5a7a3d3f59c49bd54ceaf8d8181938762370e07535f86d36d475
+        url: https://download.gnome.org/sources/folks/0.13/folks-0.13.1.tar.xz
+        sha256: 3df1c663b82fe211aead2b31cae1fc41d124e85436375762f6745c45ba46aa5d
 
   - name: gnome-desktop
     buildsystem: meson
     config-opts:
       - -Ddebug-tools=false
       - -Dudev=disabled
+      - -Dgtk_doc=false
+      - -Ddesktop_docs=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-desktop/3.32/gnome-desktop-3.32.1.2.tar.xz
-        sha256: 77d8cdc30ac69393ecb3ca702e57e79127b673bda124905372496d5367456499
+        url: https://download.gnome.org/sources/gnome-desktop/3.34/gnome-desktop-3.34.0.tar.xz
+        sha256: 8d331ee655c1d56b2b97562a07c7a7598ff6706a11ff1cdce97423ebc6b62426
 
   - name: cheese
+    buildsystem: meson
     config-opts:
-      - --disable-man
-      - --disable-lcov
+      - -Dgtk_doc=false
+      - -Dintrospection=true
+      - -Dman=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/cheese/3.32/cheese-3.32.1.tar.xz
-        sha256: 7b9ad1da8bb475a9e71ae69a5832786a75e860f0af927637540574fd49d595f6
+        url: https://download.gnome.org/sources/cheese/3.34/cheese-3.34.0.tar.xz
+        sha256: d1865600ac88012e136b1ec3db72a4634f57bc2035895277be792bb078627e73
 
   - name: gnome-contacts
     buildsystem: meson
@@ -162,5 +149,5 @@ modules:
       - --buildtype=debugoptimized
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-contacts/3.32/gnome-contacts-3.32.1.tar.xz
-        sha256: de0bfd81e4ab4400e7b4b04e81d2de4f2ebae3d70226d3db750c15e9117ce19d
+        url: https://download.gnome.org/sources/gnome-contacts/3.34/gnome-contacts-3.34.tar.xz
+        sha256: 99602ec8d660c1f3c92cae6356f64f72fb6db58e55bce27a599330bf7b622f12
