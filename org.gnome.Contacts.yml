@@ -117,8 +117,8 @@ modules:
       - /share/GConf
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/folks/0.13/folks-0.13.2.tar.xz
-        sha256: 0263d6b8de41acabbc95e9a2418374271fb649412a1de3e3ef6ad4a3a5270173
+        url: https://download.gnome.org/sources/folks/0.13/folks-0.13.1.tar.xz
+        sha256: 3df1c663b82fe211aead2b31cae1fc41d124e85436375762f6745c45ba46aa5d
 
   - name: gnome-desktop
     buildsystem: meson
