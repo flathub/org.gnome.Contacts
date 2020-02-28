@@ -56,8 +56,8 @@ modules:
       - /share/GCon/
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-online-accounts/3.34/gnome-online-accounts-3.34.0.tar.xz
-        sha256: c44fbce4eeb54703a2ab4954d54f11eb29666f9cf61b5275b9fe0fc033377f57
+        url: https://download.gnome.org/sources/gnome-online-accounts/3.34/gnome-online-accounts-3.34.1.tar.xz
+        sha256: 4832ca8e48d3a497fc676e7b6f146009ab4206995362977b9805aa39f164783a
 
   - name: libical
     cleanup:
@@ -73,8 +73,8 @@ modules:
       - -DICAL_BUILD_DOCS=false
     sources:
       - type: archive
-        url: https://github.com/libical/libical/releases/download/v3.0.5/libical-3.0.5.tar.gz
-        sha256: 7ad550c8c49c9b9983658e3ab3e68b1eee2439ec17b169a6b1e6ecb5274e78e6
+        url: https://github.com/libical/libical/releases/download/v3.0.6/libical-3.0.6.tar.gz
+        sha256: 5c8a21c2b732ece4a33e5c862970b4f35a8548bbcda50de5695f6fc211ac4d97
 
   - name: evolution-data-server
     cleanup:
@@ -101,8 +101,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.34/evolution-data-server-3.34.0.tar.xz
-        sha256: fb9db0a824ae01ecc63c82cf8e503fecdcba7118b919f04bda7d8d91f3e486cf
+        url: https://download.gnome.org/sources/evolution-data-server/3.34/evolution-data-server-3.34.4.tar.xz
+        sha256: 985c4b4b613c50c999a4ca5e9d52478acbea85e1e99bab3a8b6e57ba7eace8f3
     modules:
       - shared-modules/intltool/intltool-0.51.json
 
@@ -117,8 +117,8 @@ modules:
       - /share/GConf
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/folks/0.13/folks-0.13.1.tar.xz
-        sha256: 3df1c663b82fe211aead2b31cae1fc41d124e85436375762f6745c45ba46aa5d
+        url: https://download.gnome.org/sources/folks/0.13/folks-0.13.2.tar.xz
+        sha256: 0263d6b8de41acabbc95e9a2418374271fb649412a1de3e3ef6ad4a3a5270173
 
   - name: gnome-desktop
     buildsystem: meson
@@ -129,8 +129,8 @@ modules:
       - -Ddesktop_docs=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-desktop/3.34/gnome-desktop-3.34.0.tar.xz
-        sha256: 8d331ee655c1d56b2b97562a07c7a7598ff6706a11ff1cdce97423ebc6b62426
+        url: https://download.gnome.org/sources/gnome-desktop/3.34/gnome-desktop-3.34.4.tar.xz
+        sha256: c53e72737cc21535f2fd4b72bc2fb5594741cfc3d3ce90949bc5cc07bade0cbc
 
   - name: cheese
     buildsystem: meson
@@ -149,5 +149,5 @@ modules:
       - --buildtype=debugoptimized
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-contacts/3.34/gnome-contacts-3.34.tar.xz
-        sha256: 99602ec8d660c1f3c92cae6356f64f72fb6db58e55bce27a599330bf7b622f12
+        url: https://download.gnome.org/sources/gnome-contacts/3.34/gnome-contacts-3.34.1.tar.xz
+        sha256: 0a83c7d8ea27291222ae053d6d5e5506744ebdcf4b6e70defb5deeebb32f1ccb
