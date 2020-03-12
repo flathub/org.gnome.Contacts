@@ -1,7 +1,7 @@
 app-id: org.gnome.Contacts
 
 runtime: org.gnome.Platform
-runtime-version: '3.34'
+runtime-version: '3.36'
 sdk: org.gnome.Sdk
 
 command: gnome-contacts
@@ -9,7 +9,7 @@ command: gnome-contacts
 finish-args:
   # X11 + XShm access
   - --share=ipc
-  - --socket=x11
+  - --socket=fallback-x11
   # Wayland access
   - --socket=wayland
   # Access to the webcam
@@ -24,8 +24,6 @@ finish-args:
   - --talk-name=org.gnome.evolution.dataserver.AddressBook10
   - --talk-name=org.gnome.evolution.dataserver.Sources5
   - --talk-name=org.gnome.evolution.dataserver.Subprocess.Backend.*
- # Allow avatars from $HOME
-  - --filesystem=home:ro
   # Access for the default avatars
   - --filesystem=xdg-data/pixmaps/faces:ro:create
   # Needed for dconf to work
@@ -56,8 +54,8 @@ modules:
       - /share/GCon/
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-online-accounts/3.34/gnome-online-accounts-3.34.1.tar.xz
-        sha256: 4832ca8e48d3a497fc676e7b6f146009ab4206995362977b9805aa39f164783a
+        url: https://download.gnome.org/sources/gnome-online-accounts/3.36/gnome-online-accounts-3.36.0.tar.xz
+        sha256: 1c8f62990833ca41188dbb80c5e99d99b57a62608ca675bbcd37bc2244742f2e
 
   - name: libical
     cleanup:
@@ -73,8 +71,8 @@ modules:
       - -DICAL_BUILD_DOCS=false
     sources:
       - type: archive
-        url: https://github.com/libical/libical/releases/download/v3.0.6/libical-3.0.6.tar.gz
-        sha256: 5c8a21c2b732ece4a33e5c862970b4f35a8548bbcda50de5695f6fc211ac4d97
+        url: https://github.com/libical/libical/releases/download/v3.0.7/libical-3.0.7.tar.gz
+        sha256: 0abe66df1ea826e57db7f281c704ede834c84139012e6c686ea7adafd4e763fc
 
   - name: evolution-data-server
     cleanup:
@@ -101,8 +99,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.34/evolution-data-server-3.34.4.tar.xz
-        sha256: 985c4b4b613c50c999a4ca5e9d52478acbea85e1e99bab3a8b6e57ba7eace8f3
+        url: https://download.gnome.org/sources/evolution-data-server/3.36/evolution-data-server-3.36.0.tar.xz
+        sha256: d4d70e6658fb9e1f85639dcff315bbdddd3aa2de2ad069b1776af3fb9e9598ec
     modules:
       - shared-modules/intltool/intltool-0.51.json
 
@@ -112,6 +110,7 @@ modules:
       - -Dtelepathy_backend=false
       - -Dinspect_tool=false
       - -Dimport_tool=false
+      - -Dbluez_backend=false
     cleanup:
       - /bin
       - /share/GConf
@@ -129,8 +128,8 @@ modules:
       - -Ddesktop_docs=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-desktop/3.34/gnome-desktop-3.34.4.tar.xz
-        sha256: c53e72737cc21535f2fd4b72bc2fb5594741cfc3d3ce90949bc5cc07bade0cbc
+        url: https://download.gnome.org/sources/gnome-desktop/3.36/gnome-desktop-3.36.0.tar.xz
+        sha256: 4b04c359ccddeffb15f2e148a7871c474f6cfed1e0da21de060a93f6b9ae5c15
 
   - name: cheese
     buildsystem: meson
@@ -149,5 +148,5 @@ modules:
       - --buildtype=debugoptimized
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-contacts/3.34/gnome-contacts-3.34.1.tar.xz
-        sha256: 0a83c7d8ea27291222ae053d6d5e5506744ebdcf4b6e70defb5deeebb32f1ccb
+        url: https://download.gnome.org/sources/gnome-contacts/3.36/gnome-contacts-3.36.tar.xz
+        sha256: eecbd2209d93c8d31df92f6ccf79183b456c6e07a28ae0155cbda18aabd36f7b
