@@ -71,8 +71,8 @@ modules:
       - -DICAL_BUILD_DOCS=false
     sources:
       - type: archive
-        url: https://github.com/libical/libical/releases/download/v3.0.7/libical-3.0.7.tar.gz
-        sha256: 0abe66df1ea826e57db7f281c704ede834c84139012e6c686ea7adafd4e763fc
+        url: https://github.com/libical/libical/releases/download/v3.0.8/libical-3.0.8.tar.gz
+        sha256: 09fecacaf75ba5a242159e3a9758a5446b5ce4d0ab684f98a7040864e1d1286f
 
   - name: evolution-data-server
     cleanup:
@@ -99,8 +99,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.36/evolution-data-server-3.36.0.tar.xz
-        sha256: d4d70e6658fb9e1f85639dcff315bbdddd3aa2de2ad069b1776af3fb9e9598ec
+        url: https://download.gnome.org/sources/evolution-data-server/3.36/evolution-data-server-3.36.1.tar.xz
+        sha256: 13122b2edddb98306207d2a35d5ccae25a90702769ca0a0b51653b5984986796
     modules:
       - shared-modules/intltool/intltool-0.51.json
 
@@ -116,8 +116,8 @@ modules:
       - /share/GConf
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/folks/0.13/folks-0.13.1.tar.xz
-        sha256: 3df1c663b82fe211aead2b31cae1fc41d124e85436375762f6745c45ba46aa5d
+        url: https://download.gnome.org/sources/folks/0.14/folks-0.14.0.tar.xz
+        sha256: d6e778da637d3b33fd9a6b45115e8157d8868211dc08b943d1075b5eb7282bb9
 
   - name: gnome-desktop
     buildsystem: meson
