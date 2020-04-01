@@ -49,9 +49,9 @@ modules:
         sha256: 0513aad38e5d3cedd4ae3c551634e3be1b9baaa79775e53b2dba9456f15b01c9
 
   - name: gnome-online-accounts
-    cleanup:
-      - /bin
-      - /share/GCon/
+    config-opts:
+      - --disable-documentation
+      - --disable-backend
     sources:
       - type: archive
         url: https://download.gnome.org/sources/gnome-online-accounts/3.36/gnome-online-accounts-3.36.0.tar.xz
@@ -128,8 +128,8 @@ modules:
       - -Ddesktop_docs=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-desktop/3.36/gnome-desktop-3.36.0.tar.xz
-        sha256: 4b04c359ccddeffb15f2e148a7871c474f6cfed1e0da21de060a93f6b9ae5c15
+        url: https://download.gnome.org/sources/gnome-desktop/3.36/gnome-desktop-3.36.1.tar.xz
+        sha256: 8c6fe59e567f134e4f6508d968d5d09cbe12382d18af9a11a4f51ada6c80a880
 
   - name: cheese
     buildsystem: meson
