@@ -134,8 +134,8 @@ modules:
       - -Dtests=false
     sources:
       - type: archive
-        url: https://gitlab.gnome.org/GNOME/libhandy/-/archive/1.0.0/libhandy-1.0.0.tar.gz
-        sha256: dc1fff98cbc72a492d1adb489ee1b00e43ab4ac14c983c855ef3df435bbbda27
+        url: https://download.gnome.org/sources/libhandy/1.0/libhandy-1.0.0.tar.xz
+        sha256: a9398582f47b7d729205d6eac0c068fef35aaf249fdd57eea3724f8518d26699
 
   - name: gnome-desktop
     buildsystem: meson
