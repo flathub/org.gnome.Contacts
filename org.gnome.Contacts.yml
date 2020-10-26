@@ -1,7 +1,7 @@
 app-id: org.gnome.Contacts
 
 runtime: org.gnome.Platform
-runtime-version: '3.36'
+runtime-version: '3.38'
 sdk: org.gnome.Sdk
 
 command: gnome-contacts
@@ -25,7 +25,7 @@ finish-args:
   - --talk-name=org.gnome.evolution.dataserver.Sources5
   - --talk-name=org.gnome.evolution.dataserver.Subprocess.Backend.*
   # Access for the default avatars
-  - --filesystem=xdg-data/pixmaps/faces:ro:create
+  - --filesystem=xdg-data/pixmaps/faces:create
   # Needed for dconf to work
   - --metadata=X-DConf=migrate-path=/org/gnome/Contacts/
 
@@ -54,8 +54,8 @@ modules:
       - --disable-backend
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-online-accounts/3.36/gnome-online-accounts-3.36.0.tar.xz
-        sha256: 1c8f62990833ca41188dbb80c5e99d99b57a62608ca675bbcd37bc2244742f2e
+        url: https://download.gnome.org/sources/gnome-online-accounts/3.38/gnome-online-accounts-3.38.0.tar.xz
+        sha256: 3760ea78729b3038dda0c416b57bc2cbaafcc619eec6c5109654d747fad2418c
 
   - name: libical
     cleanup:
@@ -73,6 +73,13 @@ modules:
       - type: archive
         url: https://github.com/libical/libical/releases/download/v3.0.8/libical-3.0.8.tar.gz
         sha256: 09fecacaf75ba5a242159e3a9758a5446b5ce4d0ab684f98a7040864e1d1286f
+
+  - name: libcanberra-gtk3
+    buildsystem: autotools
+    sources:
+      - type: archive
+        url: http://0pointer.de/lennart/projects/libcanberra/libcanberra-0.30.tar.xz
+        sha256: c2b671e67e0c288a69fc33dc1b6f1b534d07882c2aceed37004bf48c601afa72
 
   - name: evolution-data-server
     cleanup:
@@ -99,8 +106,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.36/evolution-data-server-3.36.1.tar.xz
-        sha256: 13122b2edddb98306207d2a35d5ccae25a90702769ca0a0b51653b5984986796
+        url: https://download.gnome.org/sources/evolution-data-server/3.38/evolution-data-server-3.38.1.tar.xz
+        sha256: 8ff278e9c334f185236182709ba46ab727db2830d0b4e09485c1e582e1f2e4b7
     modules:
       - shared-modules/intltool/intltool-0.51.json
 
@@ -119,6 +126,17 @@ modules:
         url: https://download.gnome.org/sources/folks/0.14/folks-0.14.0.tar.xz
         sha256: d6e778da637d3b33fd9a6b45115e8157d8868211dc08b943d1075b5eb7282bb9
 
+  - name: libhandy
+    buildsystem: meson
+    config-opts:
+      - -Dexamples=false
+      - -Dglade_catalog=disabled
+      - -Dtests=false
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/libhandy/1.0/libhandy-1.0.0.tar.xz
+        sha256: a9398582f47b7d729205d6eac0c068fef35aaf249fdd57eea3724f8518d26699
+
   - name: gnome-desktop
     buildsystem: meson
     config-opts:
@@ -128,8 +146,8 @@ modules:
       - -Ddesktop_docs=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-desktop/3.36/gnome-desktop-3.36.1.tar.xz
-        sha256: 8c6fe59e567f134e4f6508d968d5d09cbe12382d18af9a11a4f51ada6c80a880
+        url: https://download.gnome.org/sources/gnome-desktop/3.38/gnome-desktop-3.38.1.tar.xz
+        sha256: 17903513fed60814e967512dd892751cb6a1d2716136232884bc65bd53cc3be0
 
   - name: cheese
     buildsystem: meson
@@ -139,8 +157,8 @@ modules:
       - -Dman=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/cheese/3.34/cheese-3.34.0.tar.xz
-        sha256: d1865600ac88012e136b1ec3db72a4634f57bc2035895277be792bb078627e73
+        url: https://download.gnome.org/sources/cheese/3.38/cheese-3.38.0.tar.xz
+        sha256: 88d2732b421b903110a2628db25c0d61e219c42bdfb5971151033fba95a8d16f
 
   - name: gnome-contacts
     buildsystem: meson
@@ -148,5 +166,5 @@ modules:
       - --buildtype=debugoptimized
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-contacts/3.36/gnome-contacts-3.36.tar.xz
-        sha256: eecbd2209d93c8d31df92f6ccf79183b456c6e07a28ae0155cbda18aabd36f7b
+        url: https://download.gnome.org/sources/gnome-contacts/3.38/gnome-contacts-3.38.tar.xz
+        sha256: 7fc2ee689c1f39c2e6375eb760b94e1651ce4a828ad408206d3a03e133da19af
