@@ -166,5 +166,5 @@ modules:
       - --buildtype=debugoptimized
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-contacts/3.38/gnome-contacts-3.38.tar.xz
-        sha256: 7fc2ee689c1f39c2e6375eb760b94e1651ce4a828ad408206d3a03e133da19af
+        url: https://download.gnome.org/sources/gnome-contacts/3.38/gnome-contacts-3.38.1.tar.xz
+        sha256: c96dce19de25d99a219bd52dfff9746226663d0d99d4506d570c2ad979035843
