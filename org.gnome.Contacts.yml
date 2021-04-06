@@ -1,7 +1,7 @@
 app-id: org.gnome.Contacts
 
 runtime: org.gnome.Platform
-runtime-version: '3.38'
+runtime-version: '40'
 sdk: org.gnome.Sdk
 
 command: gnome-contacts
@@ -54,8 +54,8 @@ modules:
       - --disable-backend
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-online-accounts/3.38/gnome-online-accounts-3.38.0.tar.xz
-        sha256: 3760ea78729b3038dda0c416b57bc2cbaafcc619eec6c5109654d747fad2418c
+        url: https://download.gnome.org/sources/gnome-online-accounts/3.38/gnome-online-accounts-3.38.1.tar.xz
+        sha256: e18889d67806da84d1261bfed1cf61d2baec131d2d0d0a92f83ff33d4649358e
 
   - name: libical
     cleanup:
@@ -106,8 +106,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.38/evolution-data-server-3.38.1.tar.xz
-        sha256: 8ff278e9c334f185236182709ba46ab727db2830d0b4e09485c1e582e1f2e4b7
+        url: https://download.gnome.org/sources/evolution-data-server/3.40/evolution-data-server-3.40.0.tar.xz
+        sha256: ed572f0cb6a2365809943449a8ccbee652681e2d9a1a7f4a54b60cbb53d87445
     modules:
       - shared-modules/intltool/intltool-0.51.json
 
@@ -146,8 +146,8 @@ modules:
       - -Ddesktop_docs=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-desktop/3.38/gnome-desktop-3.38.1.tar.xz
-        sha256: 17903513fed60814e967512dd892751cb6a1d2716136232884bc65bd53cc3be0
+        url: https://download.gnome.org/sources/gnome-desktop/40/gnome-desktop-40.0.tar.xz
+        sha256: 20abfd3f831e4e8092b55839311661dc73b2bf13fc9bef71c4a5a4475da9ee04
 
   - name: cheese
     buildsystem: meson
@@ -166,5 +166,5 @@ modules:
       - --buildtype=debugoptimized
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-contacts/3.38/gnome-contacts-3.38.1.tar.xz
-        sha256: c96dce19de25d99a219bd52dfff9746226663d0d99d4506d570c2ad979035843
+        url: https://download-fallback.gnome.org/sources/gnome-contacts/40/gnome-contacts-40.0.tar.xz
+        sha256: c9de6f3f28d84653eda81c63a40f0f5c931ad52c324ff5f9fe4d15c3612f4f70
