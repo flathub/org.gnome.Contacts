@@ -123,8 +123,8 @@ modules:
       - /share/GConf
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/folks/0.14/folks-0.14.0.tar.xz
-        sha256: d6e778da637d3b33fd9a6b45115e8157d8868211dc08b943d1075b5eb7282bb9
+        url: https://download-fallback.gnome.org/sources/folks/0.15/folks-0.15.2.tar.xz
+        sha256: ef777b2696d15ec31ba8b940ecabc17fe7fab909584f9425258f54d295ccd122
 
   - name: libhandy
     buildsystem: meson
@@ -134,8 +134,8 @@ modules:
       - -Dtests=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/libhandy/1.0/libhandy-1.0.0.tar.xz
-        sha256: a9398582f47b7d729205d6eac0c068fef35aaf249fdd57eea3724f8518d26699
+        url: https://download.gnome.org/sources/libhandy/1.2/libhandy-1.2.0.tar.xz
+        sha256: 39f590ae20910e76fe1c0607b2ebe589750f45610d6aeec5c30e2ee602a20b25
 
   - name: gnome-desktop
     buildsystem: meson
