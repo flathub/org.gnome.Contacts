@@ -54,8 +54,8 @@ modules:
       - --disable-backend
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-online-accounts/3.38/gnome-online-accounts-3.38.1.tar.xz
-        sha256: e18889d67806da84d1261bfed1cf61d2baec131d2d0d0a92f83ff33d4649358e
+        url: https://download.gnome.org/sources/gnome-online-accounts/3.39/gnome-online-accounts-3.39.92.tar.xz
+        sha256: cf49159383482103ba2e4fff98658cabb0e4f12a396b582d69c2aff7b6abc7d4
 
   - name: libical
     cleanup:
@@ -123,19 +123,8 @@ modules:
       - /share/GConf
     sources:
       - type: archive
-        url: https://download-fallback.gnome.org/sources/folks/0.15/folks-0.15.2.tar.xz
+        url: https://download.gnome.org/sources/folks/0.15/folks-0.15.2.tar.xz
         sha256: ef777b2696d15ec31ba8b940ecabc17fe7fab909584f9425258f54d295ccd122
-
-  - name: libhandy
-    buildsystem: meson
-    config-opts:
-      - -Dexamples=false
-      - -Dglade_catalog=disabled
-      - -Dtests=false
-    sources:
-      - type: archive
-        url: https://download.gnome.org/sources/libhandy/1.2/libhandy-1.2.0.tar.xz
-        sha256: 39f590ae20910e76fe1c0607b2ebe589750f45610d6aeec5c30e2ee602a20b25
 
   - name: gnome-desktop
     buildsystem: meson
@@ -156,15 +145,15 @@ modules:
       - -Dintrospection=true
       - -Dman=false
     sources:
-      - type: archive
-        url: https://download.gnome.org/sources/cheese/3.38/cheese-3.38.0.tar.xz
-        sha256: 88d2732b421b903110a2628db25c0d61e219c42bdfb5971151033fba95a8d16f
+      - type: git
+        url: https://gitlab.gnome.org/GNOME/cheese.git
+        commit: df2c5f2c1f85ff6fdad95df21c66db4b933442af
 
   - name: gnome-contacts
     buildsystem: meson
     config-opts:
       - --buildtype=debugoptimized
     sources:
-      - type: archive
-        url: https://download-fallback.gnome.org/sources/gnome-contacts/40/gnome-contacts-40.0.tar.xz
-        sha256: c9de6f3f28d84653eda81c63a40f0f5c931ad52c324ff5f9fe4d15c3612f4f70
+      - type: git
+        url: https://gitlab.gnome.org/GNOME/gnome-contacts.git
+        commit: 1dedc1353c0edf36f3efc28ced1ade6d80dea2dc
