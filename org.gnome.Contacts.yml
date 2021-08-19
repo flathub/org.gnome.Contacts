@@ -111,8 +111,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.40/evolution-data-server-3.40.1.tar.xz
-        sha256: eac75f348aa5defbe9473fa30ab6084635ee64d8e3eaaec60a62c27f149c3e22
+        url: https://download.gnome.org/sources/evolution-data-server/3.40/evolution-data-server-3.40.4.tar.xz
+        sha256: 87c185f18c37270e3611981f19bd9221ac974c807462c8dce90bea08712c5800
         x-checker-data:
           type: gnome
           name: evolution-data-server
@@ -146,8 +146,8 @@ modules:
       - -Ddesktop_docs=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-desktop/40/gnome-desktop-40.1.tar.xz
-        sha256: 8a07897305219c5699549ae2048f7155515ef97c7ce4d6585ddda15d5859e1cf
+        url: https://download.gnome.org/sources/gnome-desktop/40/gnome-desktop-40.4.tar.xz
+        sha256: 88ae96f585e0d0870941bba3d75ddf3ec40348e1c5ae741321ca482fac9d45ef
         x-checker-data:
           type: gnome
           name: gnome-desktop
