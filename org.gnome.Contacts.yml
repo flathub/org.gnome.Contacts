@@ -175,11 +175,9 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/gnome-contacts.git
-        commit: 1dedc1353c0edf36f3efc28ced1ade6d80dea2dc
-        # Suspended until the latest release has valid metadata.
-        # This should be the case with a version > 40.0.
-        #tag: '41.0'
-        #x-checker-data:
-        #  type: git
-        #  url: https://gitlab.gnome.org/GNOME/gnome-contacts.git
-        #  tag-pattern: ^([\d.]+)$
+        tag: '41.0'
+        commit: 06d6cd077014164d820a35d4f10d890b25572ab1
+        x-checker-data:
+         type: git
+         url: https://gitlab.gnome.org/GNOME/gnome-contacts.git
+         tag-pattern: ^([\d.]+)$
