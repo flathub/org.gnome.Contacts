@@ -111,8 +111,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.40/evolution-data-server-3.40.1.tar.xz
-        sha256: eac75f348aa5defbe9473fa30ab6084635ee64d8e3eaaec60a62c27f149c3e22
+        url: https://download.gnome.org/sources/evolution-data-server/3.42/evolution-data-server-3.42.0.tar.xz
+        sha256: e8fdd3bc47a07d6f8a3052bbcae880f20f6dbc4f6973a8e90d00169bb99b1635
         x-checker-data:
           type: gnome
           name: evolution-data-server
@@ -131,8 +131,8 @@ modules:
       - /share/GConf
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/folks/0.14/folks-0.14.0.tar.xz
-        sha256: d6e778da637d3b33fd9a6b45115e8157d8868211dc08b943d1075b5eb7282bb9
+        url: https://download.gnome.org/sources/folks/0.15/folks-0.15.3.tar.xz
+        sha256: 21d737faf093f4be065473ee70ca20885b9a2c3685941dba24c2239fd3c544a5
         x-checker-data:
           type: gnome
           name: folks
@@ -146,8 +146,8 @@ modules:
       - -Ddesktop_docs=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-desktop/40/gnome-desktop-40.1.tar.xz
-        sha256: 8a07897305219c5699549ae2048f7155515ef97c7ce4d6585ddda15d5859e1cf
+        url: https://download.gnome.org/sources/gnome-desktop/41/gnome-desktop-41.0.tar.xz
+        sha256: 69cb1d3d9a10700eb66348ef1c0e66a855fc5a97ae62902df97a499da11562d2
         x-checker-data:
           type: gnome
           name: gnome-desktop
@@ -161,7 +161,12 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/cheese.git
-        commit: df2c5f2c1f85ff6fdad95df21c66db4b933442af
+        tag: '41.0'
+        commit: 92ef18589eb10fab08f0806846c66d1e1383c78d
+        x-checker-data:
+         type: git
+         url: https://gitlab.gnome.org/GNOME/cheese.git
+         tag-pattern: ^([\d.]+)$
 
   - name: gnome-contacts
     buildsystem: meson
