@@ -57,8 +57,8 @@ modules:
       - --disable-backend
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-online-accounts/3.40/gnome-online-accounts-3.40.1.tar.xz
-        sha256: 955a03128d0e87855d34d7c534e088f6286ed7ac01baa4ef824ef42a2cb39aad
+        url: https://download.gnome.org/sources/gnome-online-accounts/3.44/gnome-online-accounts-3.44.0.tar.xz
+        sha256: 381d5d4106f435b6f87786aa049be784774e15996adcc02789807afc87ea7342
         x-checker-data:
           type: gnome
           name: gnome-online-accounts
@@ -110,8 +110,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.44/evolution-data-server-3.44.0.tar.xz
-        sha256: 0d8881b5c51e1b91761b1945db264a46aabf54a73eea1ca8f448b207815d582e
+        url: https://download.gnome.org/sources/evolution-data-server/3.44/evolution-data-server-3.44.1.tar.xz
+        sha256: 6e05a90204a276f99d932097f1032cc17dd1d8e265c7c56727c63240fd4c0ccf
         x-checker-data:
           type: gnome
           name: evolution-data-server
