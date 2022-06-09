@@ -18,6 +18,7 @@ finish-args:
   - --talk-name=org.freedesktop.Notifications
   # GNOME Settings (for the Online Accounts panel)
   - --talk-name=org.gnome.ControlCenter
+  - --talk-name=org.gnome.Settings
   # GNOME Online Accounts (GOA)
   - --talk-name=org.gnome.OnlineAccounts
   # Evolution Data server (E-D-S)
