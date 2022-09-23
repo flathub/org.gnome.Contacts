@@ -160,6 +160,7 @@ modules:
         tag: '43.0'
         commit: 0f6c7d65479c54eee54b681836e1ae3c99a9443c
         x-checker-data:
+          is-important: true
           type: git
           url: https://gitlab.gnome.org/GNOME/gnome-contacts.git
           tag-pattern: ^([\d.]+)$
