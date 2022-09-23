@@ -1,0 +1,13 @@
+diff --git a/data/org.gnome.Contacts.appdata.xml.in.in b/data/org.gnome.Contacts.appdata.xml.in.in
+index 98bdedfddf9eb8987fe8aac1adab9b738fde697d..6397e21dac686f40c522e0af09fc4aae13aa3939 100644
+--- a/data/org.gnome.Contacts.appdata.xml.in.in
++++ b/data/org.gnome.Contacts.appdata.xml.in.in
+@@ -19,7 +19,7 @@
+   </description>
+   <screenshots>
+     <screenshot type="default">
+-      <caption>Contacts with no contacts.</caption>
++      <caption>Contacts with no contacts</caption>
+       <image>https://static.gnome.org/appdata/gnome-43/contacts/contacts-empty.png</image>
+     </screenshot>
+     <screenshot>

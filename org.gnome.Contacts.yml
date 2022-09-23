@@ -1,7 +1,7 @@
 app-id: org.gnome.Contacts
 
 runtime: org.gnome.Platform
-runtime-version: '42'
+runtime-version: '43'
 sdk: org.gnome.Sdk
 
 command: gnome-contacts
@@ -14,8 +14,6 @@ finish-args:
   - --socket=wayland
   # Access to the webcam
   - --device=all
-  # Notification access
-  - --talk-name=org.freedesktop.Notifications
   # GNOME Settings (for the Online Accounts panel)
   - --talk-name=org.gnome.ControlCenter
   - --talk-name=org.gnome.Settings
@@ -46,22 +44,25 @@ cleanup:
 
 modules:
   - name: librest
+    buildsystem: meson
+    config-opts:
+      - -Dgtk_doc=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/rest/0.8/rest-0.8.1.tar.xz
-        sha256: 0513aad38e5d3cedd4ae3c551634e3be1b9baaa79775e53b2dba9456f15b01c9
+        url: https://download.gnome.org/sources/rest/0.9/rest-0.9.1.tar.xz
+        sha256: 9266a5c10ece383e193dfb7ffb07b509cc1f51521ab8dad76af96ed14212c2e3
         x-checker-data:
           type: gnome
           name: rest
 
   - name: gnome-online-accounts
+    buildsystem: meson
     config-opts:
-      - --disable-documentation
-      - --disable-backend
+      - -Dgoabackend=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-online-accounts/3.44/gnome-online-accounts-3.44.0.tar.xz
-        sha256: 381d5d4106f435b6f87786aa049be784774e15996adcc02789807afc87ea7342
+        url: https://download.gnome.org/sources/gnome-online-accounts/3.46/gnome-online-accounts-3.46.0.tar.xz
+        sha256: 5e7859ce4858a6b99d3995ed70527d66e297bb90bbf75ec8780fe9da22c1fcaa
         x-checker-data:
           type: gnome
           name: gnome-online-accounts
@@ -113,8 +114,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.44/evolution-data-server-3.44.1.tar.xz
-        sha256: 6e05a90204a276f99d932097f1032cc17dd1d8e265c7c56727c63240fd4c0ccf
+        url: https://download.gnome.org/sources/evolution-data-server/3.46/evolution-data-server-3.46.0.tar.xz
+        sha256: e5fa28095a183f7ab5a928e35a828379b481ddef83ed4c7b51a2e3c4aef5cdab
         x-checker-data:
           type: gnome
           name: evolution-data-server
@@ -156,9 +157,11 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/gnome-contacts.git
-        tag: '42.0'
-        commit: 06fd6bf78baa1717290af02160cc6db4d19ad075
+        tag: '43.0'
+        commit: 0f6c7d65479c54eee54b681836e1ae3c99a9443c
         x-checker-data:
           type: git
           url: https://gitlab.gnome.org/GNOME/gnome-contacts.git
           tag-pattern: ^([\d.]+)$
+      - type: patch
+        path: metainfo-caption.patch
