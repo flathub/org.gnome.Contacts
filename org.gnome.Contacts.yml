@@ -155,8 +155,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/gnome-contacts.git
-        tag: '43.0'
-        commit: 0f6c7d65479c54eee54b681836e1ae3c99a9443c
+        tag: '43.1'
+        commit: 8adf521f7a288dd30b90d9730dff617c74acfcfb
         x-checker-data:
           is-important: true
           type: git
