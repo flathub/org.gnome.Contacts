@@ -112,8 +112,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.46/evolution-data-server-3.46.0.tar.xz
-        sha256: e5fa28095a183f7ab5a928e35a828379b481ddef83ed4c7b51a2e3c4aef5cdab
+        url: https://download.gnome.org/sources/evolution-data-server/3.46/evolution-data-server-3.46.3.tar.xz
+        sha256: 0938e2279e5cfbc2204766ca9d3fea570911699b07c10cbe01aca62a7e8b2bee
         x-checker-data:
           type: gnome
           name: evolution-data-server
