@@ -49,8 +49,8 @@ modules:
       - -Dgtk_doc=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/rest/0.9/rest-0.9.1.tar.xz
-        sha256: 9266a5c10ece383e193dfb7ffb07b509cc1f51521ab8dad76af96ed14212c2e3
+        url: https://download.gnome.org/sources/rest/0.8/rest-0.8.1.tar.xz
+        sha256: 0513aad38e5d3cedd4ae3c551634e3be1b9baaa79775e53b2dba9456f15b01c9
         x-checker-data:
           type: gnome
           name: rest
@@ -81,8 +81,8 @@ modules:
       - -DICAL_BUILD_DOCS=false
     sources:
       - type: archive
-        url: https://github.com/libical/libical/releases/download/v3.0.14/libical-3.0.14.tar.gz
-        sha256: 4284b780356f1dc6a01f16083e7b836e63d3815e27ed0eaaad684712357ccc8f
+        url: https://github.com/libical/libical/releases/download/v3.0.16/libical-3.0.16.tar.gz
+        sha256: b44705dd71ca4538c86fb16248483ab4b48978524fb1da5097bd76aa2e0f0c33
         x-checker-data:
           type: anitya
           project-id: 1637
@@ -114,8 +114,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.46/evolution-data-server-3.46.0.tar.xz
-        sha256: e5fa28095a183f7ab5a928e35a828379b481ddef83ed4c7b51a2e3c4aef5cdab
+        url: https://download.gnome.org/sources/evolution-data-server/3.46/evolution-data-server-3.46.4.tar.xz
+        sha256: a59b254145c59facd7c7b5382db78dc5f0ed1f6a6e9b8fe7d5e75959f93c0cc8
         x-checker-data:
           type: gnome
           name: evolution-data-server
@@ -134,8 +134,8 @@ modules:
       - /share/GConf
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/folks/0.15/folks-0.15.5.tar.xz
-        sha256: 0fff8a896330cd82aee4598324f7e541c884d0337536212723b4beb38c759086
+        url: https://download.gnome.org/sources/folks/0.14/folks-0.14.0.tar.xz
+        sha256: d6e778da637d3b33fd9a6b45115e8157d8868211dc08b943d1075b5eb7282bb9
         x-checker-data:
           type: gnome
           name: folks
@@ -157,8 +157,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/gnome-contacts.git
-        tag: '43.0'
-        commit: 0f6c7d65479c54eee54b681836e1ae3c99a9443c
+        tag: '43.1'
+        commit: 8adf521f7a288dd30b90d9730dff617c74acfcfb
         x-checker-data:
           is-important: true
           type: git
