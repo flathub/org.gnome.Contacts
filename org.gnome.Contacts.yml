@@ -12,8 +12,6 @@ finish-args:
   - --socket=fallback-x11
   # Wayland access
   - --socket=wayland
-  # Access to the webcam
-  - --device=all
   # GNOME Settings (for the Online Accounts panel)
   - --talk-name=org.gnome.ControlCenter
   - --talk-name=org.gnome.Settings
@@ -114,8 +112,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.46/evolution-data-server-3.46.0.tar.xz
-        sha256: e5fa28095a183f7ab5a928e35a828379b481ddef83ed4c7b51a2e3c4aef5cdab
+        url: https://download.gnome.org/sources/evolution-data-server/3.46/evolution-data-server-3.46.3.tar.xz
+        sha256: 0938e2279e5cfbc2204766ca9d3fea570911699b07c10cbe01aca62a7e8b2bee
         x-checker-data:
           type: gnome
           name: evolution-data-server
@@ -157,8 +155,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/gnome-contacts.git
-        tag: '43.0'
-        commit: 0f6c7d65479c54eee54b681836e1ae3c99a9443c
+        tag: '43.1'
+        commit: 8adf521f7a288dd30b90d9730dff617c74acfcfb
         x-checker-data:
           is-important: true
           type: git
