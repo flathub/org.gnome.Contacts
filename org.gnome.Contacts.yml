@@ -150,6 +150,13 @@ modules:
         url: https://github.com/flatpak/libportal/releases/download/0.6/libportal-0.6.tar.xz
         sha256: 88a12c3ba71bc31acff7238c280de697d609cebc50830c3766776ec35abc6566
 
+  - name: libqrencode
+    buildsystem: autotools
+    sources:
+      - type: archive
+        url: https://github.com/fukuchi/libqrencode/archive/refs/tags/v4.1.1.tar.gz
+        sha256: 5385bc1b8c2f20f3b91d258bf8ccc8cf62023935df2d2676b5b67049f31a049c
+
   - name: gnome-contacts
     buildsystem: meson
     config-opts:
