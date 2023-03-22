@@ -171,5 +171,3 @@ modules:
           type: git
           url: https://gitlab.gnome.org/GNOME/gnome-contacts.git
           tag-pattern: ^([\d.]+)$
-      - type: patch
-        path: metainfo-caption.patch
