@@ -1,4 +1,4 @@
-app-id: org.gnome.Contacts
+id: org.gnome.Contacts
 
 runtime: org.gnome.Platform
 runtime-version: '43'
