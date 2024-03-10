@@ -128,8 +128,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.48/evolution-data-server-3.48.0.tar.xz
-        sha256: 0f25f73331edf53909be40f412b2a86939270327517616303f322de157083c35
+        url: https://download.gnome.org/sources/evolution-data-server/3.50/evolution-data-server-3.50.4.tar.xz
+        sha256: d7edffbe03a0bbcecbee67393214b831c7b18cd895b84c4dbfe1387776e257c5
         x-checker-data:
           type: gnome
           name: evolution-data-server
@@ -148,8 +148,8 @@ modules:
       - /share/GConf
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/folks/0.15/folks-0.15.6.tar.xz
-        sha256: c866630c553f29ce9be1c7a60267cb4080a6bccf4b8d551dc4c7e6234d840248
+        url: https://download.gnome.org/sources/folks/0.15/folks-0.15.7.tar.xz
+        sha256: 120f219ef63212caa95ae7f6aeb64e29928b0b1a8b9452054304a00d0f347871
         x-checker-data:
           type: gnome
           name: folks
@@ -179,8 +179,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/gnome-contacts.git
-        tag: '45.0'
-        commit: f100e20eb51fac292b763aca06f7d963a2d1b9f3
+        tag: '45.1'
+        commit: aa0456c32a6ec8e766ea090e7f3fb85e0035f506
         x-checker-data:
           is-important: true
           type: git
