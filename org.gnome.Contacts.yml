@@ -72,8 +72,8 @@ modules:
       - -Dman=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-online-accounts/3.52/gnome-online-accounts-3.52.0.tar.xz
-        sha256: 631953a9d9ea098b268a0bbe2df18cbbec6781589cac6b0455214609ee12bbd8
+        url: https://download.gnome.org/sources/gnome-online-accounts/3.52/gnome-online-accounts-3.52.2.tar.xz
+        sha256: fb413f48deefbb9fc3002a91579dee947ceeed41f49c2f51317af7489b676f67
         x-checker-data:
           type: gnome
           name: gnome-online-accounts
@@ -125,8 +125,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.54/evolution-data-server-3.54.0.tar.xz
-        sha256: a54b47b977a97030f738a412f4f5d5b2efbef5e0ebe8929b7cce00ac54681084
+        url: https://download.gnome.org/sources/evolution-data-server/3.54/evolution-data-server-3.54.2.tar.xz
+        sha256: 11f0253089c8abf456cffda3fe658a35a0de2b8ae93d8f257d6b020ae7963d20
         x-checker-data:
           type: gnome
           name: evolution-data-server
@@ -184,8 +184,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/gnome-contacts.git
-        tag: '47.0'
-        commit: 80772da70091baffa61d2fe398408eeed95f10a6
+        tag: 47.1.1
+        commit: 82b59a55dd01870a4db769c46c53c1fdf83e54ea
         x-checker-data:
           is-important: true
           type: git
