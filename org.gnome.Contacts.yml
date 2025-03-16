@@ -72,8 +72,8 @@ modules:
       - -Dman=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-online-accounts/3.52/gnome-online-accounts-3.52.2.tar.xz
-        sha256: fb413f48deefbb9fc3002a91579dee947ceeed41f49c2f51317af7489b676f67
+        url: https://download.gnome.org/sources/gnome-online-accounts/3.54/gnome-online-accounts-3.54.1.tar.xz
+        sha256: 9d058b3aac8b2d8b6b2ae7cb57c8a8abe539e73c88220c315b5b99f87ce6efd8
         x-checker-data:
           type: gnome
           name: gnome-online-accounts
@@ -92,8 +92,8 @@ modules:
       - -DICAL_BUILD_DOCS=false
     sources:
       - type: archive
-        url: https://github.com/libical/libical/releases/download/v3.0.18/libical-3.0.18.tar.gz
-        sha256: 72b7dc1a5937533aee5a2baefc990983b66b141dd80d43b51f80aced4aae219c
+        url: https://github.com/libical/libical/releases/download/v3.0.20/libical-3.0.20.tar.gz
+        sha256: e73de92f5a6ce84c1b00306446b290a2b08cdf0a80988eca0a2c9d5c3510b4c2
         x-checker-data:
           type: anitya
           project-id: 1637
@@ -125,8 +125,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.54/evolution-data-server-3.54.2.tar.xz
-        sha256: 11f0253089c8abf456cffda3fe658a35a0de2b8ae93d8f257d6b020ae7963d20
+        url: https://download.gnome.org/sources/evolution-data-server/3.56/evolution-data-server-3.56.0.tar.xz
+        sha256: 7ae5482aa4ee2894467716c5be982500e1d511dddf4ab29b68fdb107d7f8a8ff
         x-checker-data:
           type: gnome
           name: evolution-data-server
@@ -161,8 +161,8 @@ modules:
       - -Dbackend-gtk4=enabled
     sources:
       - type: archive
-        url: https://github.com/flatpak/libportal/releases/download/0.8.1/libportal-0.8.1.tar.xz
-        sha256: 281e54e4f8561125a65d20658f1462ab932b2b1258c376fed2137718441825ac
+        url: https://github.com/flatpak/libportal/releases/download/0.9.1/libportal-0.9.1.tar.xz
+        sha256: de801ee349ed3c255a9af3c01b1a401fab5b3fc1c35eb2fd7dfb35d4b8194d7f
         x-checker-data:
           type: json
           url: https://api.github.com/repos/flatpak/libportal/releases/latest
@@ -184,8 +184,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/gnome-contacts.git
-        tag: 47.1.1
-        commit: 82b59a55dd01870a4db769c46c53c1fdf83e54ea
+        tag: '48.0'
+        commit: 4f24e390702a9cf5aa36abc779a31ca975d5ef93
         x-checker-data:
           is-important: true
           type: git
