@@ -60,7 +60,6 @@ modules:
         x-checker-data:
           type: gnome
           name: rest
-          stable-only: false
 
   - name: gnome-online-accounts
     buildsystem: meson
@@ -150,7 +149,6 @@ modules:
         x-checker-data:
           type: gnome
           name: folks
-          stable-only: false
 
   - name: libportal
     buildsystem: meson
