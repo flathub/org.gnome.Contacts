@@ -135,6 +135,7 @@ modules:
   - name: folks
     buildsystem: meson
     config-opts:
+      - -Dtests=false
       - -Dtelepathy_backend=false
       - -Dinspect_tool=false
       - -Dimport_tool=false
