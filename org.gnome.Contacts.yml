@@ -1,7 +1,7 @@
 id: org.gnome.Contacts
 
 runtime: org.gnome.Platform
-runtime-version: '48'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.vala
@@ -71,8 +71,8 @@ modules:
       - -Dman=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-online-accounts/3.54/gnome-online-accounts-3.54.1.tar.xz
-        sha256: 9d058b3aac8b2d8b6b2ae7cb57c8a8abe539e73c88220c315b5b99f87ce6efd8
+        url: https://download.gnome.org/sources/gnome-online-accounts/3.56/gnome-online-accounts-3.56.0.tar.xz
+        sha256: 31d6a017d171b27ff936478fdb0792a200c8142eafc18b255073ce9dfb417572
         x-checker-data:
           type: gnome
           name: gnome-online-accounts
@@ -124,8 +124,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.56/evolution-data-server-3.56.0.tar.xz
-        sha256: 7ae5482aa4ee2894467716c5be982500e1d511dddf4ab29b68fdb107d7f8a8ff
+        url: https://download.gnome.org/sources/evolution-data-server/3.58/evolution-data-server-3.58.0.tar.xz
+        sha256: a2b5a0b8db11b728edc1d6f1c229dc2711962b7a87c0384221dac8d96000cef7
         x-checker-data:
           type: gnome
           name: evolution-data-server
@@ -183,8 +183,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/gnome-contacts.git
-        tag: '48.0'
-        commit: 4f24e390702a9cf5aa36abc779a31ca975d5ef93
+        tag: '49.0'
+        commit: b21a75506754a896a16eac6b754602415e3f2303
         x-checker-data:
           is-important: true
           type: git
