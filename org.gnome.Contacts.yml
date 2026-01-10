@@ -76,6 +76,7 @@ modules:
         x-checker-data:
           type: gnome
           name: gnome-online-accounts
+          version-scheme: odd-minor-is-unstable
 
   - name: libical
     cleanup:
