@@ -129,6 +129,7 @@ modules:
         x-checker-data:
           type: gnome
           name: evolution-data-server
+          version-scheme: odd-minor-is-unstable
     modules:
       - shared-modules/intltool/intltool-0.51.json
 
