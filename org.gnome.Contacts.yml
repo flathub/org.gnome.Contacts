@@ -1,7 +1,7 @@
 id: org.gnome.Contacts
 
 runtime: org.gnome.Platform
-runtime-version: '50'
+runtime-version: '51'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.vala
@@ -71,8 +71,8 @@ modules:
       - -Dman=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-online-accounts/3.58/gnome-online-accounts-3.58.0.tar.xz
-        sha256: 344d4dff9149a1adc4539417193e1eccc2f76ef40ac24e104ccf58072be55999
+        url: https://download.gnome.org/sources/gnome-online-accounts/3.58/gnome-online-accounts-3.58.1.tar.xz
+        sha256: 9ec1900cc51409c2067c07c828c10be06fe3bf68d2999bb72d7d5ed325ed9bbc
         x-checker-data:
           type: gnome
           name: gnome-online-accounts
@@ -98,6 +98,8 @@ modules:
           type: anitya
           project-id: 1637
           url-template: https://github.com/libical/libical/releases/download/v$version/libical-$version.tar.gz
+          versions:
+            <: '4.0'
 
   - name: evolution-data-server
     cleanup:
@@ -125,8 +127,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/evolution-data-server/3.60/evolution-data-server-3.60.0.tar.xz
-        sha256: e04e383e0e28b24d91b3d373f6ffb87a5d46ba3845c7999c412cc7813adf6c18
+        url: https://download.gnome.org/sources/evolution-data-server/3.62/evolution-data-server-3.62.0.tar.xz
+        sha256: 78be88e9a511f5afe7ff2e363eade84b622dd0282647fc576edb2d4ff2962cba
         x-checker-data:
           type: gnome
           name: evolution-data-server
@@ -162,8 +164,8 @@ modules:
       - -Dbackend-gtk4=enabled
     sources:
       - type: archive
-        url: https://github.com/flatpak/libportal/releases/download/0.9.1/libportal-0.9.1.tar.xz
-        sha256: de801ee349ed3c255a9af3c01b1a401fab5b3fc1c35eb2fd7dfb35d4b8194d7f
+        url: https://github.com/flatpak/libportal/releases/download/0.11.0/libportal-0.11.0.tar.xz
+        sha256: abb9e452a1c372133bd3eb8f0bb30d07b2d0a8fb02001c4155cf287555db4040
         x-checker-data:
           type: json
           url: https://api.github.com/repos/flatpak/libportal/releases/latest
@@ -185,8 +187,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/gnome-contacts.git
-        tag: '50.0'
-        commit: b1d8c4242953214369fe63ee3a7a795ff450966c
+        tag: '51.0'
+        commit: 72bff0305ac8d76b5d717d91adc645caf2ad7bad
         x-checker-data:
           is-important: true
           type: git
