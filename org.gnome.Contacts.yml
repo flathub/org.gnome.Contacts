@@ -155,8 +155,6 @@ modules:
           type: gnome
           name: folks
 
-  - shared-modules/libportal/libportal.json
-
   - name: libqrencode
     buildsystem: autotools
     sources:
